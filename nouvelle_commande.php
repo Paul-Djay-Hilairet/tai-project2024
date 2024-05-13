@@ -18,7 +18,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 </head>
 <body>
 
-<!-- Links (sit on top) -->
+<!-- Linksz (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">

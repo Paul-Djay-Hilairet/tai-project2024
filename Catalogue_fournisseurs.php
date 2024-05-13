@@ -25,13 +25,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <a href="acceuildemo.php" class="w3-button w3-block">Commande en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Historique commandes</a>
+      <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">Catalogue fournisseurs </a>
+      <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Nouvelle commande</a>
+      <a href="nouvelle_commande.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
   </div>
 </div>

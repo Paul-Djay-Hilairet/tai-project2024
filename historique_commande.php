@@ -25,7 +25,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <a href="acceuildemo.php" class="w3-button w3-block">Commande en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="historique_commande" class="w3-button w3-block">Historique commandes</a>
+      <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
       <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs </a>

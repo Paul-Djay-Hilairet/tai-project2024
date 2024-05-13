@@ -8,8 +8,9 @@ php
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css_accueil_demo.css">
 <style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+html,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
@@ -39,69 +40,80 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
 
   <div class="w3-panel">
-    <h1><b>MARKETING</b></h1>
-    <p>Template by w3.css</p>
+    <h1><b>Commandes en cours</b></h1>
+    
   </div>
 
   <!-- Slideshow -->
-  <div class="w3-container">
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/coffee.jpg" style="width:100%">
-      <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">Lorem ipsum</span>
-      </div>
+  <div class="container">
+    <h1>Commandes en cours</h1>
+    <div class="commands">
+        <div class="command">
+            <div class="command-details">
+                <p class="command-number">Référence commande: XXXFFP6354CD</p>
+                <p>Fournisseur: Mokuzai</p>
+                <p>Date de commande: 16/04/2024</p>
+                <p>État livraison commande: <span class="status received">Reçue</span></p>
+            </div>
+            <div class="buttons-container">
+                <button class="button archive">Archiver</button>
+                <button class="button delete">Supprimer</button>
+                <button class="button details-btn">Fiche technique détaillée</button>
+            </div>
+        </div>
+        <!-- Ajoutez autant de commandes que nécessaire -->
     </div>
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/workbench.jpg" style="width:100%">
-      <div class="w3-display-middle w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">Klorim tipsum</span>
-      </div>
+</div>
+
+<!-- Fenêtre modale -->
+<div class="modal-container" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1>Fiche technique détaillée</h1>
+            <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+    <div class="info-panel">
+        <p>Numéro de fiche: 001</p>
+        <p>Nom du contrôleur: John Doe</p>
+        <p>Référence commande: XXXFFP6354CD</p>
+        <p>Date de commande: 16/04/2024</p>
+        <p>Fournisseur: Mokuzai</p>
+        <p>Nombre de critères validés: 10</p>
     </div>
-    <div class="w3-display-container mySlides">
-      <img src="/w3images/sound.jpg" style="width:100%">
-      <div class="w3-display-topright w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom">Blorum pipsum</span>
-      </div>
+    <div class="table-panel">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Critères techniques</th>
+                    <th>Évaluation</th>
+                    <th>Commentaires</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ajoutez les lignes du tableau ici -->
+                <tr>
+                    <td>Spécification 1</td>
+                    <td>★★★★☆</td>
+                    <td>Commentaire 1</td>
+                </tr>
+                <tr>
+                    <td>Spécification 2</td>
+                    <td>★★★☆☆</td>
+                    <td>Commentaire 2</td>
+                </tr>
+                <!-- Ajoutez autant de lignes que nécessaire -->
+            </tbody>
+        </table>
     </div>
 
-    <!-- Slideshow next/previous buttons -->
-    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
-      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-    
-      <div class="w3-center">
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-      </div>
+        <div class="modal-footer">
+            <button class="button return-btn" id="returnBtn">Retour</button>
+        </div>
     </div>
-  </div>
+</div>
   
-  <!-- Grid -->
-  <div class="w3-row w3-container">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
-    </div>
-    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-      <h3>Design</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
-
-    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
-      <h3>Branding</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
-
-    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
-      <h3>Consultation</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
-
-    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
-      <h3>Promises</h3>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
-  </div>
+  
 
   <!-- Grid -->
   <div class="w3-row-padding" id="plans">
@@ -250,6 +262,32 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <script>
+
+// Fonction pour ouvrir la fenêtre modale
+function openModal() {
+    modal.style.display = "block";
+}
+
+// Fonction pour fermer la fenêtre modale
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Fonction pour ajouter ou soustraire à l'index des diapositives et afficher la diapositive correspondante
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+// Écoutez les clics sur le bouton de fermeture et le bouton de retour
+closeBtn.addEventListener("click", closeModal);
+returnBtn.addEventListener("click", closeModal);
+
+// Écoutez les clics sur les boutons "Fiche technique détaillée"
+const detailsBtns = document.querySelectorAll(".details-btn");
+detailsBtns.forEach(btn => {
+    btn.addEventListener("click", openModal);
+});
+
 // Slideshow
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -277,7 +315,9 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-white";
 }
+
 </script>
+
 
 </body>
 </html>

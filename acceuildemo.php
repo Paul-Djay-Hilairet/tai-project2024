@@ -45,7 +45,8 @@ html,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     
   </div>
 
-  <!-- Slideshow -->
+
+  <!-- Slideshowe -->
   <div class="container">
     <h1>Commandes en cours</h1>
     <div class="commands">

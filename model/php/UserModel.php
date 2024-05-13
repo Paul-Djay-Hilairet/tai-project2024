@@ -36,8 +36,8 @@ class UserModel extends DBModel {
         ]);
         $entries = $statement->fetchAll();
         if (count($entries) == 1) {
-            $result["firstname"] = $entries[0]['firstname'];
-            $result["lastname"] = $entries[0]['lastname'];
+            $result["name"] = $entries[0]['name'];
+            
             $result["id"] = $entries[0]['id'];
         }
         return $result;

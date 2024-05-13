@@ -1,9 +1,5 @@
 /* styles.css */
-.fournisseur-table th, .fournisseur-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}   
+
 
 body {
     font-family: Arial, sans-serif;

@@ -21,16 +21,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block">Home</a>
+      <a href="#" class="w3-button w3-block">Commande en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Plans</a>
+      <a href="#plans" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">About</a>
+      <a href="#about" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Contact</a>
+      <a href="#contact" class="w3-button w3-block">Nouvelle commande</a>
     </div>
   </div>
 </div>

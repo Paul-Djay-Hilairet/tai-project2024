@@ -12,13 +12,13 @@
 
 require_once("DBModel.php");
 
-class UserModel extends DBModel {
+class CommandModel extends DBModel {
 
 
     /**
      * @return an associative array of all employees with first_name, last_name, id, creation_date (not formatted)
      */
-    function check_login(string $login, string $password) {
+    function getAll(string $id_user) {
         $result = [];
         if (!$this->connected) {
             // Something went wrong during the connection to the database.
@@ -28,16 +28,16 @@ class UserModel extends DBModel {
         }
         // The request uses the MD5() functions since password should not be stored
         // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
-        $request = "SELECT * FROM user WHERE login=:login AND password=MD5(:password)";
+        $request = "SELECT * FROM commande WHERE id_user=:id_user ";
         $statement = $this->db->prepare($request);
         $statement->execute([
-            "login" => $login,
-            "password" => $password
+            "id_user" => $id_user,
+      
         ]);
         $entries = $statement->fetchAll();
         if (count($entries) == 1) {
-            $result["name"] = $entries[0]['name'];
-            
+            $result["firstname"] = $entries[0]['firstname'];
+            $result["lastname"] = $entries[0]['lastname'];
             $result["id"] = $entries[0]['id'];
         }
         return $result;

@@ -106,8 +106,13 @@ CREATE TABLE IF NOT EXISTS `fournisseur` (
 INSERT INTO `fournisseur` (`id`, `name`, `contact`, `Adresse`) VALUES
 (1, 'Laguiole', 'contact@laguiole.com', '23 allee Amicale 12210 Laguiole '),
 (2, 'Opinel', 'contact@opinel.com', '508 Bd Henry Bordeaux, 73000 Chambery'),
+<<<<<<< HEAD
 (3, 'Fissler', 'contact@fissler.com', 'Harald-Fissler-StraBe 10, 55768 Hoppstadten-Weiersbach, Allemagne'),
 (4, 'Couteaux Kai', 'contact@kai-europe.com', 'Kottendorfer StraBe 5\r\n42697 Solingen\r\nAllemagne'),
+=======
+(3, 'Fissler', 'contact@fissler.com', 'Harald-Fissler-Strape 10, 55768 Hoppstpdten-Weiersbach, Allemagne'),
+(4, 'Couteaux Kai', 'contact@kai-europe.com', 'Kottendorfer Strpe 5\r\n42697 Solingen\r\nAllemagne'),
+>>>>>>> 8b9f1db53a7cf5eef4768d9826c977cdf419c87c
 (5, 'Victorinox', 'contact@victorinox.com', 'Rte de Bale 63, 2800 Delemont, Suisse');
 
 -- --------------------------------------------------------

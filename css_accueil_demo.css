@@ -3,14 +3,6 @@ body {
     background-color: #f5f5f5;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 h1 {
     font-size: 28px;
@@ -69,4 +61,99 @@ h1 {
 
 .table-panel {
     flex: 1;
+}
+
+
+
+
+style
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.commands table {
+    width: 125%;
+    border-collapse: collapse;
+}
+
+.commands th, .commands td {
+    padding: 12px;
+    text-align: left;
+}
+
+.commands th {
+    background-color: #364b62;
+    color: #fff;
+}
+
+.commands tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.commands tr:hover {
+    background-color: #ddd;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-btn, .details-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.details-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: transparent;
+}
+
+.delete-btn::before {
+    content: "\f1f8"; /* Code unicode de l'icône de poubelle */
+    font-family: "Font Awesome"; /* Utilisation de Font Awesome pour les icônes */
+    font-size: 20px;
+    color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #f8d7da;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 13 mai 2024 à 10:11
+-- Généré le : mar. 14 mai 2024 à 07:00
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
   KEY `id_fournisseur` (`id_fournisseur`),
   KEY `id_product` (`id_product`),
   KEY `id_user` (`id_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `commande`
@@ -48,7 +48,9 @@ CREATE TABLE IF NOT EXISTS `commande` (
 
 INSERT INTO `commande` (`id`, `id_fournisseur`, `id_product`, `id_user`, `reference`, `Date_commande`, `Etat_livraison`) VALUES
 (1, 2, 1, 1, 'OP10A46', '13/05/24', 'En cours'),
-(2, 5, 2, 1, 'VICSD48A25', '13/05/24', 'En cours');
+(2, 5, 2, 1, 'VICSD48A25', '13/05/24', 'En cours'),
+(3, 3, 3, 4, 'FISSP9547', '14/05/24', 'Expedition'),
+(4, 4, 4, 3, 'CK4952E', '14/05/24', 'Livre');
 
 -- --------------------------------------------------------
 
@@ -70,7 +72,17 @@ CREATE TABLE IF NOT EXISTS `conformite` (
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`),
   KEY `id_product` (`id_product`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `conformite`
+--
+
+INSERT INTO `conformite` (`id`, `id_user`, `id_product`, `eval_long_lame`, `eval_mat_lame`, `eval_type_lame`, `eval_manche`, `eval_poids`, `commentaire`) VALUES
+(1, 2, 1, '3.5/5', '4.5/5', '5/5', '5/5', '4.5/5', 'Malgre un leger défaut de longueur (1.5mm de moins) le couteau est valide.'),
+(2, 1, 2, '3.5/5', '2.5/5', '3.5/5', '4/5', '1.5/5', 'Erreur a la finition. Couteau non valide.'),
+(3, 2, 4, '5/5', '5/5', '5/5', '4.5/5', '5/5', 'Couteau quasi parfait. Valide.'),
+(4, 2, 3, '4.5/5', '3.5/5', '4.5/5', '3/5', '5/5', 'Leger defaut de moulage. Couteau valide.');
 
 -- --------------------------------------------------------
 
@@ -92,11 +104,11 @@ CREATE TABLE IF NOT EXISTS `fournisseur` (
 --
 
 INSERT INTO `fournisseur` (`id`, `name`, `contact`, `Adresse`) VALUES
-(1, 'Laguiole', 'contact@laguiole.com', '23 allée Amicale 12210 Laguiole '),
-(2, 'Opinel', 'contact@opinel.com', '508 Bd Henry Bordeaux, 73000 Chambéry'),
-(3, 'Fissler', 'contact@fissler.com', 'Harald-Fissler-Straße 10, 55768 Hoppstädten-Weiersbach, Allemagne'),
-(4, 'Couteaux Kai', 'contact@kai-europe.com', 'Kottendorfer Straße 5\r\n42697 Solingen\r\nAllemagne'),
-(5, 'Victorinox', 'contact@victorinox.com', 'Rte de Bâle 63, 2800 Delémont, Suisse');
+(1, 'Laguiole', 'contact@laguiole.com', '23 allee Amicale 12210 Laguiole '),
+(2, 'Opinel', 'contact@opinel.com', '508 Bd Henry Bordeaux, 73000 Chambery'),
+(3, 'Fissler', 'contact@fissler.com', 'Harald-Fissler-StraBe 10, 55768 Hoppstadten-Weiersbach, Allemagne'),
+(4, 'Couteaux Kai', 'contact@kai-europe.com', 'Kottendorfer StraBe 5\r\n42697 Solingen\r\nAllemagne'),
+(5, 'Victorinox', 'contact@victorinox.com', 'Rte de Bale 63, 2800 Delemont, Suisse');
 
 -- --------------------------------------------------------
 
@@ -117,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `Poids` int(11) NOT NULL,
   `Origine` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `product`
@@ -126,7 +138,8 @@ CREATE TABLE IF NOT EXISTS `product` (
 INSERT INTO `product` (`id`, `name`, `fournisseur`, `prix`, `Longueur_lame`, `Materiau_lame`, `Type_lame`, `Manche`, `Poids`, `Origine`) VALUES
 (1, 'N°10 Opinel Tradition', 'Opinel', 15, 10, 'Acier inoxydable ', 'Lame Yatagan', 'Bois hetre', 15, 'Savoie'),
 (2, 'Classic SD', 'Victorinox', 25, 5, 'Aluminium', 'Couteau-suisse', 'Plastique ABS', 25, 'Suisse'),
-(3, 'Couteau Santoku PROFI', 'Fissler', 30, 13, 'Acier inoxydable', 'Alvéolé', 'Plastique ABS', 160, 'Allemande');
+(3, 'Couteau Santoku PROFI', 'Fissler', 30, 13, 'Acier inoxydable', 'Alveole', 'Plastique ABS', 160, 'Allemande'),
+(4, 'Kai Engestu', 'Couteaux Kai', 600, 20, 'Acier damas', 'Couteau de chef', 'Bois pakka bleu', 140, 'Japonaise');
 
 -- --------------------------------------------------------
 

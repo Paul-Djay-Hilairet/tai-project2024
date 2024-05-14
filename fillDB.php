@@ -23,7 +23,7 @@ $statement->execute([
     "first" => "Homer",
     "last" => "Simpson",
     "login" => "donut",
-    "pwd" => "123"
+    "pwd" => "254"
 ]);
 
 $statement->execute([

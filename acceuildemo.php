@@ -5,6 +5,7 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="css page commercial">
@@ -47,25 +48,73 @@ html,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
   <!-- Slideshowe -->
-  <div class="container">
-    <h1>Commandes en cours</h1>
-    <div class="commands">
-        <div class="command">
-            <div class="command-details">
-                <p class="command-number">Référence commande: XXXFFP6354CD</p>
-                <p>Fournisseur: Mokuzai</p>
-                <p>Date de commande: 16/04/2024</p>
-                <p>État livraison commande: <span class="status received">Reçue</span></p>
-            </div>
-            <div class="buttons-container">
-                <button class="button archive">Archiver</button>
-                <button class="button delete">Supprimer</button>
-                <button class="button details-btn">Fiche technique détaillée</button>
-            </div>
-        </div>
-        <!-- Ajoutez autant de commandes que nécessaire -->
-    </div>
-</div>
+  <?php
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "tai";
+
+// Connexion
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Vérifier la connexion
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+// Traitement du formulaire de suppression de commande
+if(isset($_POST['delete_command'])) {
+    $command_id = $_POST['command_id'];
+    $delete_sql = "DELETE FROM commande WHERE id = $command_id";
+    mysqli_query($conn, $delete_sql);
+}
+
+// Requête SQL pour récupérer les fournisseurs
+$sql = "SELECT commande.*, user.name AS user_name, fournisseur.name AS fournisseur_name 
+FROM commande INNER JOIN user ON commande.id_user = user.id INNER JOIN fournisseur ON commande.id_fournisseur = fournisseur.id";
+$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
+
+// Affichage du tableau HTML
+echo '<div class="container">
+        
+        <div class="commands">
+            <table>
+                <tr>
+                    <th>Utilisateur</th>
+                    <th>Référence</th>
+                    <th>Fournisseur</th>
+                    <th>Date de commande</th>
+                    <th>État livraison commande</th>
+                </tr>';
+
+// Affichage des données dans le tableau
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row['user_name'] . "</td>";
+        echo "<td>" . $row['reference'] . "</td>";
+        echo "<td>" . $row['fournisseur_name'] . "</td>";
+        echo "<td>" . $row['Date_commande'] . "</td>";
+        echo "<td>" . $row['Etat_livraison'] . "</td>";
+        echo '<td>
+                <form method="post" action="">
+                    <input type="hidden" name="command_id" value="' . $row['id'] . '">
+                    <input type="submit" name="delete_command" value="Supprimer commande">
+                </form>
+                <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
+              </td>';
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='6'>Aucune commande en cours</td></tr>";
+}
+
+echo "</table></div></div>";
+
+// Fermer la connexion à la base de données
+mysqli_close($conn);
+?>
 
 <!-- Fenêtre modale -->
 <div class="modal-container" id="modal">
@@ -120,91 +169,10 @@ html,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   </div>
   
  
-  <!-- Grid -->
-  <div class="w3-row-padding" id="plans">
-    <div class="w3-center w3-padding-64">
-      <h3>Historique commandes</h3>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16"><b>10GB</b> Storage</li>
-        <li class="w3-padding-16"><b>10</b> Emails</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 10</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-        <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 50</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-green w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-  </div>
+  
 
   
-  <!-- Contact -->
-  <div class="w3-center w3-padding-64" id="contact">
-    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
-  </div>
-
-  <form class="w3-container" action="/action_page.php" target="_blank">
-    <div class="w3-section">
-      <label>Name</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
-    </div>
-    <div class="w3-section">
-      <label>Email</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
-    </div>
-    <div class="w3-section">
-      <label>Subject</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
-    </div>
-    <div class="w3-section">
-      <label>Message</label>
-      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
-    </div>
-    <button type="submit" class="w3-button w3-block w3-black">Send</button>
-  </form>
-
-</div>
+  
 
 <!-- Footer -->
 
@@ -224,6 +192,7 @@ html,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <script>
+
 
 // Fonction pour ouvrir la fenêtre modale
 function openModal() {

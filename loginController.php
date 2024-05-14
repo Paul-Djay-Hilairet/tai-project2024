@@ -26,12 +26,12 @@
             // The controller does not care about that. It just calls the model.
             $result = $userModel->check_login($_POST['login'], $_POST['pwd']);
             // If the search (in the db here) is successful
-            if (isset($result['firstname'])) {
+            if (isset($result['name'])) {
                 // the controller can now redirect to the correct welcome webpage
                 // making sure the firstname and lastname are registered throughout the **session**
                 session_start();
-                $_SESSION['firstname'] = $result['firstname'];
-                $_SESSION['lastname'] = $result['lastname'];
+                $_SESSION['name'] = $result['name'];
+            
                 $_SESSION['id'] = $result['id'];
             }
             else {

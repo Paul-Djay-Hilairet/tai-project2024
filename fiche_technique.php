@@ -22,6 +22,7 @@ if (!$conn) {
 if(isset($_GET['id_product'])) {
     // Récupérez l'ID du produit depuis le paramètre GET
     $id_product = $_GET['id_product'];
+
     
     // Connectez-vous à votre base de données et exécutez une requête pour récupérer les données du produit correspondant à l'ID
     // Assumez que vous avez déjà établi la connexion à la base de données et que vous avez $conn comme connexion active

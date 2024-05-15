@@ -28,7 +28,7 @@ class CommandModel extends DBModel {
         }
         // The request uses the MD5() functions since password should not be stored
         // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
-        $request = "SELECT * FROM commande WHERE id_user=:id_user ";
+        $request = "SELECT * FROM user WHERE id_user=:id_user ";
         $statement = $this->db->prepare($request);
         $statement->execute([
             "id_user" => $id_user,
@@ -36,8 +36,8 @@ class CommandModel extends DBModel {
         ]);
         $entries = $statement->fetchAll();
         if (count($entries) == 1) {
-            $result["firstname"] = $entries[0]['firstname'];
-            $result["lastname"] = $entries[0]['lastname'];
+            
+            $result["name"] = $entries[0]['name'];
             $result["id"] = $entries[0]['id'];
         }
         return $result;

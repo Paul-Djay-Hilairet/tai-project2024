@@ -57,7 +57,7 @@
     // If something to say, the view will display it
     // Otherwise, the view will simply display the login form
     // the form if not logged in, the welcome page if logged in
-    if (isset($_SESSION['firstname'])) {
+    if (isset($_SESSION['name'])) {
         require_once(__DIR__."/view/php/welcomePage.php");
     }
     else {

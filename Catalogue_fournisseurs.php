@@ -117,7 +117,7 @@ mysqli_close($conn);
 ?>
 
 <div class="w3-bar">
-    <a href="acceuildemo.php" class="w3-bar-item w3-button tablink">Ajouter un fournisseur</a>
+    <a href="ajouter_fournisseur.php" class="w3-bar-item w3-button tablink">Ajouter un fournisseur</a>
 </div>
 
 </div>

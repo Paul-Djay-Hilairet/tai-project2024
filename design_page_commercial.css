@@ -1,0 +1,42 @@
+design_page_commercial
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+}
+.panel {
+    display: flex;
+    justify-content: space-between;
+}
+.panel-left, .panel-right {
+    width: 48%;
+}
+h1, h2 {
+    color: #333;
+}
+form {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-top: 10px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+.edit-link {
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #00f;
+}

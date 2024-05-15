@@ -93,6 +93,7 @@ echo "<table>
 <th>Contact</th>
 <th>Adresse</th>
 <th>Modification</th>
+<th>Suppression</th>
 </tr>";
 
 if (mysqli_num_rows($result) > 0) {
@@ -104,10 +105,11 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['contact'] . "</td>";
         echo "<td>" . $row['Adresse'] . "</td>";
         echo "<td><a href='modifier_fournisseur.php?id=" . $row['id'] . "'>Modifier</a></td>";
+        echo "<td><a href='supprimer_fournisseur.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce fournisseur ?\");'>Supprimer</a></td>";
         echo "</tr>";
     }
 } else {
-    echo "<tr><td colspan='4'>Aucun résultat trouvé</td></tr>";
+    echo "<tr><td colspan='6'>Aucun résultat trouvé</td></tr>";
 }
 
 echo "</table>";
@@ -117,7 +119,7 @@ mysqli_close($conn);
 ?>
 
 <div class="w3-bar">
-    <a href="acceuildemo.php" class="w3-bar-item w3-button tablink">Ajouter un fournisseur</a>
+    <a href="ajouter_fournisseur.php" class="w3-bar-item w3-button tablink">Ajouter un fournisseur</a>
 </div>
 
 </div>

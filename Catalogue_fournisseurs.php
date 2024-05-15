@@ -96,7 +96,7 @@ echo "<table>
 </tr>";
 
 if (mysqli_num_rows($result) > 0) {
-    // Afficher chaque ligne de résultat
+    // Afficher chaque lignee de résultat
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";

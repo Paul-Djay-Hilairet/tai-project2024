@@ -1,7 +1,7 @@
 <?php
 /**
  * Simple PHP script example to showcase hwo HTML content
- * can be re-used across multiple HTML files
+ * can be re-used across multiple HTML filess
  * 
  * @author: w.delamare
  * @date: Dec. 2023

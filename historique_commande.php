@@ -91,7 +91,7 @@ h1 {
 .delete-btn {
     padding: 5px 5px;
     border: none;
-    border-radius: 40px;
+    border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s;
     background-color: transparent;

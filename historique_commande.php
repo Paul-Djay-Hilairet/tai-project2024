@@ -191,7 +191,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['Date_commande'] . "</td>";
         echo "<td>" . $row['Etat_livraison'] . "</td>";
         echo '<td>
-                <form method="post" action="">
+                <form method="post" action="supprimer_commande.php">
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
                     <input type="submit" name="delete_command" value="Supprimer commande">
                 </form>

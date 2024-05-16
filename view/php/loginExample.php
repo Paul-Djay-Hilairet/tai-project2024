@@ -19,31 +19,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="view/css/example.css">
         <title>Login Example</title>
     </head>
     <body>
         
         <!-- PHP only used to display stuff -->
-        <?php include_header(); ?>
-
         <?php 
             // if an error happened
             if (isset($something_to_say)) {
                 include_error_message($something_to_say);
             }
         ?>
-
-        <form method="post" action="loginController.php">
-            <fieldset>
-                <legend>Login</legend>
-                <input type="text" placeholder="login" id="login" name="login">
-                <input type="password" placeholder='password' id='pwd' name="pwd">
-                <button type="submit">Submit</button>
-            </fieldset>
-        </form>
-
-        <?php include_footer(); ?>
-
     </body>
 </html>

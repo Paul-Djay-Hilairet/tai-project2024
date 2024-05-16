@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
 <?php
     /**
      * Example of a simple controller
@@ -33,6 +43,10 @@
                 $_SESSION['name'] = $result['name'];
             
                 $_SESSION['id'] = $result['id'];
+
+                echo $_SESSION['id'];
+
+                header('Location:acceuildemo.php');
             }
             else {
                 // set the error message to be displayed in the view

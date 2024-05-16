@@ -14,17 +14,16 @@
     <div class="product-details">
             <?php
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "tai";
+            require_once("env_settings.php");
 
-            $conn = mysqli_connect($servername, $username, $password, $database);
+            // Connexion
+                    $conn = mysqli_connect($host, $dbname, $user, $pwd);
 
-// Vérifier la connexion
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+
+            // Vérifier la connexion
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
 
 // Vérifiez si l'ID du produit est passé en paramètre GET

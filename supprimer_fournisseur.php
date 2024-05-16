@@ -1,12 +1,10 @@
 <?php
 // Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "tai";
+require_once("env_settings.php");
 
 // Connexion
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($host, $dbname, $user, $pwd);
+
 
 // Vérifier la connexion
 if (!$conn) {

@@ -1,21 +1,16 @@
 <?php
 // Connexion à la base de données
-$host = "localhost";
-$dbname = "tai_app_2023_2024_ant";
-$user = "tai_app_2023_2024_ant";
-$pwd = "Y5I07L0SE2";
+require __DIR__ . "/model/php/env_settings.php";
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id_fournisseur = $_POST['id_fournisseur'];
   $id_product = $_POST['id_product'];
   $id_user = $_POST['id_user'];
   $reference = $_POST['reference'];
-  $date_commande = date("Y-m-d");
+  $date_commande = date("d/m/Y");
 
   $sql = "INSERT INTO commande (id_fournisseur, id_product, id_user, reference, Date_commande, Etat_livraison)
   VALUES ('$id_fournisseur', '$id_product', '$id_user', '$reference', '$date_commande', 'En cours')";
@@ -65,7 +60,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 </div>
 
 <!-- Formulaire de commande -->
-<div class="w3-container" style="margin-top:80px">
+<div class="w3-center" style="margin-top:80px">
   <h2>Nouvelle Commande</h2>
   <form action="nouvelle_commande.php" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
     <h2 class="w3-center">Formulaire de Commande</h2>
@@ -73,7 +68,15 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-row w3-section">
       <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
       <div class="w3-rest">
-        <input class="w3-input w3-border" name="id_user" type="text" placeholder="ID Utilisateur">
+        <select class="w3-select w3-border" name="id_user">
+          <option value="" disabled selected>Choisissez un utilisateur</option>
+          <?php
+          $result = $conn->query("SELECT id, name FROM user");
+          while ($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+          }
+          ?>
+        </select>
       </div>
     </div>
 
@@ -83,9 +86,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <select class="w3-select w3-border" name="id_fournisseur">
           <option value="" disabled selected>Choisissez un fournisseur</option>
           <?php
-          $result = $conn->query("SELECT id, nom FROM fournisseurs");
+          $result = $conn->query("SELECT id, name FROM fournisseur");
           while ($row = $result->fetch_assoc()) {
-            echo "<option value='" . $row['id'] . "'>" . $row['nom'] . "</option>";
+            echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
           }
           ?>
         </select>
@@ -98,9 +101,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <select class="w3-select w3-border" name="id_product">
           <option value="" disabled selected>Choisissez un produit</option>
           <?php
-          $result = $conn->query("SELECT id, nom FROM produits");
+          $result = $conn->query("SELECT id, name FROM product");
           while ($row = $result->fetch_assoc()) {
-            echo "<option value='" . $row['id'] . "'>" . $row['nom'] . "</option>";
+            echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
           }
           ?>
         </select>

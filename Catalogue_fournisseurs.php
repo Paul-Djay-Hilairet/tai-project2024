@@ -49,7 +49,7 @@ a {
 <div class="w3-top">
   <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="acceuildemo.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="index.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
       <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>

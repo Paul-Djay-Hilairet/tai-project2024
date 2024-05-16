@@ -140,13 +140,17 @@ h1 {
 </div>
 
 
-  <!-- Slideshowe -->
+  
 <?php
 // Connexion à la base de données
-require_once("env_settings.php");
+
+$host = "localhost";
+$dbname = "tai_app_2023_2024_ant";
+$user = "tai_app_2023_2024_ant";
+$pwd = "Y5I07L0SE2";
 
 // Connexion
-$conn = mysqli_connect($host, $dbname, $user, $pwd);
+$conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 // Vérifier la connexion
 if (!$conn) {
@@ -166,7 +170,7 @@ $result = mysqli_query($conn, $sql);
 $result = mysqli_query($conn, $sql);
 
 // Affichage du tableau HTML
-echo '<div class="container">
+echo "<div class="container">
         
         <div class="commands">
             <table>
@@ -176,7 +180,7 @@ echo '<div class="container">
                     <th>Fournisseur</th>
                     <th>Date de commande</th>
                     <th>État livraison commande</th>
-                </tr>';
+                </tr>";
 
 // Affichage des données dans le tableau
 if (mysqli_num_rows($result) > 0) {
@@ -197,8 +201,9 @@ if (mysqli_num_rows($result) > 0) {
               </td>';
         echo "</tr>";
     }
-} else {
-    echo "<tr><td colspan='6'>Aucune commande en cours</td></tr>";
+} 
+    else {
+        echo "<tr><td colspan='6'>Aucune commande en cours</td></tr>";
 }
 
 echo "</table></div></div>";
@@ -206,11 +211,6 @@ echo "</table></div></div>";
 // Fermer la connexion à la base de données
 mysqli_close($conn);
 ?>
-
-<!-- Fenêtre modale -->
-
-  
-  
 
   </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -68,10 +68,13 @@ a {
 
 <?php
 // Connexion à la base de données
-require_once("env_settings.php");
+$host = "localhost";
+$dbname = "tai_app_2023_2024_ant";
+$user = "tai_app_2023_2024_ant";
+$pwd = "Y5I07L0SE2";
 
 // Connexion
-$conn = mysqli_connect($host, $dbname, $user, $pwd);
+$conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 
 // Vérifier la connexion
@@ -82,6 +85,9 @@ if (!$conn) {
 // Requête SQL pour récupérer les fournisseurs
 $sql = "SELECT * FROM fournisseur";
 $result = mysqli_query($conn, $sql);
+
+
+
 
 // Affichage du tableau HTML
 echo "<table>

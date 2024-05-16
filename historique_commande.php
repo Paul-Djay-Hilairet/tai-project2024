@@ -135,7 +135,7 @@ h1 {
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
 
   <div class="w3-panel">
-    <h1><b>Commandes en cours</b></h1>
+    <h1><b>historique commandes</b></h1>
     
 </div>
 
@@ -143,10 +143,13 @@ h1 {
   <!-- Slideshowe -->
 <?php
 // Connexion à la base de données
-require_once("env_settings.php");
+$host = "localhost";
+$dbname = "tai_app_2023_2024_ant";
+$user = "tai_app_2023_2024_ant";
+$pwd = "Y5I07L0SE2";
 
 // Connexion
-$conn = mysqli_connect($host, $dbname, $user, $pwd);
+$conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 
 // Vérifier la connexion

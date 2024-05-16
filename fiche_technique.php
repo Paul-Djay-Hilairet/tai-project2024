@@ -14,10 +14,13 @@
     <div class="product-details">
             <?php
 
-            require_once("env_settings.php");
+                    $host = "localhost";
+                    $dbname = "tai_app_2023_2024_ant";
+                    $user = "tai_app_2023_2024_ant";
+                    $pwd = "Y5I07L0SE2";
 
-            // Connexion
-                    $conn = mysqli_connect($host, $dbname, $user, $pwd);
+                // Connexion
+                    $conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 
             // Vérifier la connexion

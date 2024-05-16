@@ -46,15 +46,17 @@
                     $_SESSION['id'] = $result['id'];
 
                     $_SESSION['statut'] = $result['statut'];
-                }
-            } else {
+            } 
+            else {
                 // set the error message to be displayed in the view
                 $something_to_say = "Invalid login and/or password.";
             }
-        } else {
+        } 
+        else {
             // set the error message to be displayed in the view
             $something_to_say = "Missing login and/or password";
-        }
+    }
+}
 
         // If the user wants to logout, simply destroy the session
         // (and hence redirect to the login form)

@@ -40,6 +40,12 @@
                 if (isset($result['name'])) {
                     // the controller can now redirect to the correct welcome webpage
                     // making sure the firstname and lastname are registered throughout the **session**
+                    
+                    // Login Admin : admin.Gesticom password:123
+                    // Login Controleur : ctlr.Gesticom password:revelation
+                    // Login Commercial : commerce.Gesticom password:EatMyShorts
+                    // Login Commercial 2 : commercial2.Gesticom password:456
+
                     session_start();
                     $_SESSION['name'] = $result['name'];
 

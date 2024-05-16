@@ -18,8 +18,8 @@
         .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
         
         .container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 1100px;
+    margin: 10px auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -64,9 +64,10 @@ h1 {
 .delete-btn, .details-btn {
     padding: 5px 5px;
     border: none;
-    border-radius: 40px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 
 .delete-btn {
@@ -195,7 +196,7 @@ if (mysqli_num_rows($result) > 0) {
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
                     <input type="submit" name="delete_command" value="Supprimer commande">
                 </form>
-                
+                <br></br>
                 <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
               </td>';
         echo "</tr>";

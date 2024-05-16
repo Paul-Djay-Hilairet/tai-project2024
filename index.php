@@ -140,14 +140,12 @@ h1 {
 </div>
 
 
-  
+  <!-- Slideshowe -->
 <?php
 // Connexion à la base de données
 
-$host = "localhost";
-$dbname = "tai_app_2023_2024_ant";
-$user = "tai_app_2023_2024_ant";
-$pwd = "Y5I07L0SE2";
+require __DIR__. "/model/php/env_settings.php";  
+
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
@@ -170,7 +168,7 @@ $result = mysqli_query($conn, $sql);
 $result = mysqli_query($conn, $sql);
 
 // Affichage du tableau HTML
-echo "<div class="container">
+echo '<div class="container">
         
         <div class="commands">
             <table>
@@ -180,7 +178,7 @@ echo "<div class="container">
                     <th>Fournisseur</th>
                     <th>Date de commande</th>
                     <th>État livraison commande</th>
-                </tr>";
+                </tr>';
 
 // Affichage des données dans le tableau
 if (mysqli_num_rows($result) > 0) {
@@ -192,18 +190,17 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['Date_commande'] . "</td>";
         echo "<td>" . $row['Etat_livraison'] . "</td>";
         echo '<td>
-                <form method="post" action="">
+                <form method="post" action="supprimer_commande.php">
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
-                    <input type="submit" name="delete_command" value="Supprimer commande">
+                    
                 </form>
                 
                 <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
               </td>';
         echo "</tr>";
     }
-} 
-    else {
-        echo "<tr><td colspan='6'>Aucune commande en cours</td></tr>";
+} else {
+    echo "<tr><td colspan='6'>Aucune commande en cours</td></tr>";
 }
 
 echo "</table></div></div>";
@@ -211,6 +208,11 @@ echo "</table></div></div>";
 // Fermer la connexion à la base de données
 mysqli_close($conn);
 ?>
+
+
+
+  
+  
 
   </div>
 

@@ -143,10 +143,7 @@ h1 {
   <!-- Slideshowe -->
 <?php
 // Connexion à la base de données
-$host = "localhost";
-$dbname = "tai_app_2023_2024_ant";
-$user = "tai_app_2023_2024_ant";
-$pwd = "Y5I07L0SE2";
+require __DIR__. "/model/php/env_settings.php";  
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
@@ -168,7 +165,7 @@ $sql = "SELECT commande.*, user.name AS user_name, fournisseur.name AS fournisse
         FROM commande 
         INNER JOIN user ON commande.id_user = user.id 
         INNER JOIN fournisseur ON commande.id_fournisseur = fournisseur.id
-        WHERE commande.Etat_livraison = 'livre'";
+        WHERE commande.Etat_livraison = 'livree'";
 $result = mysqli_query($conn, $sql);
 
 // Affichage du tableau HTML

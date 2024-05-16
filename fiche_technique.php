@@ -12,15 +12,12 @@
 <div class="container">
     <h1>Fiche Technique du Produit</h1>
     <div class="product-details">
-            <?php
+    <?php
+// Connexion à la base de données
+require __DIR__ . "/model/php/env_settings.php";
 
-                    $host = "localhost";
-                    $dbname = "tai_app_2023_2024_ant";
-                    $user = "tai_app_2023_2024_ant";
-                    $pwd = "Y5I07L0SE2";
-
-                // Connexion
-                    $conn = mysqli_connect($host, $user, $pwd, $dbname);
+// Connexion
+$conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 
             // Vérifier la connexion

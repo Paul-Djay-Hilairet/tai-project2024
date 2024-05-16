@@ -5,6 +5,12 @@ require __DIR__ . "/model/php/env_settings.php";
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
 
+
+// Vérifier la connexion
+ if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+          }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id_fournisseur = $_POST['id_fournisseur'];
   $id_product = $_POST['id_product'];

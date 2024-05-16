@@ -196,7 +196,7 @@ if (mysqli_num_rows($result) > 0) {
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
                     <input type="submit" name="delete_command" value="Supprimer commande">
                 </form>
-                <br></br>
+                
                 <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
               </td>';
         echo "</tr>";

@@ -3,6 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
+<title>Catalogue des Fournisseurs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -106,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['name'] . "</td>";
         echo "<td>" . $row['contact'] . "</td>";
         echo "<td>" . $row['Adresse'] . "</td>";
-        echo "<td><a href='modifier_fournisseur.php?id=" . $row['id'] . "'>Modifier</a></td>";
+        echo "<td><a href='fiche_technique.php?id=" . $row['id'] . "'>Modifier</a></td>";
         echo "<td><a href='supprimer_fournisseur.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce fournisseur ?\");'>Supprimer</a></td>";
         echo "</tr>";
     }

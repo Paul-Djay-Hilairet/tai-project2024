@@ -14,17 +14,19 @@
     <div class="product-details">
             <?php
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "tai";
+                    $host = "localhost";
+                    $dbname = "tai_app_2023_2024_ant";
+                    $user = "tai_app_2023_2024_ant";
+                    $pwd = "Y5I07L0SE2";
 
-            $conn = mysqli_connect($servername, $username, $password, $database);
+                // Connexion
+                    $conn = mysqli_connect($host, $user, $pwd, $dbname);
 
-// Vérifier la connexion
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
+
+            // Vérifier la connexion
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
 
 // Vérifiez si l'ID du produit est passé en paramètre GET
@@ -79,7 +81,7 @@
             ?>
     </div>
     <div class="modal-footer">
-    <a class="button" href="acceuildemo.php">Retour à l'accueil</a>
+    <a class="button" href="index.php">Retour à l'accueil</a>
 </div>
 </body>
 </html>

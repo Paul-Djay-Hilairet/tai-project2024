@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -49,7 +49,7 @@ a {
 <div class="w3-top">
   <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="acceuildemo.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="index.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
       <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
@@ -68,13 +68,14 @@ a {
 
 <?php
 // Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "tai";
+$host = "localhost";
+$dbname = "tai_app_2023_2024_ant";
+$user = "tai_app_2023_2024_ant";
+$pwd = "Y5I07L0SE2";
 
 // Connexion
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($host, $user, $pwd, $dbname);
+
 
 // Vérifier la connexion
 if (!$conn) {
@@ -84,6 +85,9 @@ if (!$conn) {
 // Requête SQL pour récupérer les fournisseurs
 $sql = "SELECT * FROM fournisseur";
 $result = mysqli_query($conn, $sql);
+
+
+
 
 // Affichage du tableau HTML
 echo "<table>

@@ -62,7 +62,7 @@ a {
       <a href="page_catalogue_fournisseur_commercial.php" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
-      <a href="page_nouvelle_commande_commercial.php" class="w3-button w3-block">Conformité_commande</a>
+      <a href="page_nouvelle_commande_commercial.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
   </div>
 </div>
@@ -70,7 +70,7 @@ a {
 <!-- Contenu principal -->
 <div class="container">
 <div class="w3-col s2">
-            <a href="loginController.php" class="w3-button w3-block w3-right">Déconnexion</a>
+            <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
 </div>
 
 <?php

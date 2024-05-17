@@ -68,7 +68,7 @@ a {
 <!-- Contenu principal -->
 <div class="container">
 <div class="w3-col s2">
-            <a href="loginController.php" class="w3-button w3-block w3-right">Déconnexion</a>
+            <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
 </div>
 
 <?php

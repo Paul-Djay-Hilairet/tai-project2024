@@ -136,7 +136,7 @@ h1 {
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
 <div class="w3-col s2">
-            <a href="loginController.php" class="w3-button w3-block w3-right">Déconnexion</a>
+            <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
 </div>
   <div class="w3-panel">
     <h1><b>historique commandes</b></h1>

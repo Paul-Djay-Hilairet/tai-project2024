@@ -46,19 +46,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="index.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="page_accueil_commercial.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
+      <a href="page_historique_commande_commercial.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs</a>
+      <a href="page_catalogue_fournisseurs_commercial.php" class="w3-button w3-block">Catalogue fournisseurs</a>
     </div>
     <div class="w3-col s3">
-      <a href="nouvelle_commande.php" class="w3-button w3-block">Nouvelle commande</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="conformité_commande.php" class="w3-button w3-block">Conformité commande</a>
+      <a href="page_nouvelle_commande_commercial.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
   </div>
 </div>

@@ -134,6 +134,7 @@ h1 {
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
 
   <div class="w3-panel">
+    <h1><b>Bienvenue Controleur</b></h1>
     <h1><b>Commandes en cours</b></h1>
     
     

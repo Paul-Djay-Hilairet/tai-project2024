@@ -112,7 +112,7 @@ h1 {
 
 </head>
 <body>
-<nav> Welcome Admin </nav>
+
 <!-- Links (sit on top) -->
     <div class="w3-top">
         <div class="w3-row w3-large w3-light-grey">
@@ -133,8 +133,11 @@ h1 {
 
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
-
+<div class="w3-col s2">
+            <a href="loginController.php" class="w3-button w3-block w3-right">Déconnexion</a>
+</div>
   <div class="w3-panel">
+    <h1><b>Bienvenue Administrateur</b></h1>
     <h1><b>Commandes en cours</b></h1>
     
 </div>
@@ -144,7 +147,7 @@ h1 {
 <?php
 // Connexion à la base de données
 
-require __DIR__. "/model/php/env_settings.php";  
+require __DIR__. "/model/php/env_settings.php";
 
 
 // Connexion

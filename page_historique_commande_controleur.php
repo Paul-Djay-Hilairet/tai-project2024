@@ -1,3 +1,4 @@
+page_historique_commande_controleur
 
 <!DOCTYPE html>
 <html>
@@ -18,8 +19,8 @@
         .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
         
         .container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 1100px;
+    margin: 10px auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -64,9 +65,10 @@ h1 {
 .delete-btn, .details-btn {
     padding: 5px 5px;
     border: none;
-    border-radius: 40px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 
 .delete-btn {
@@ -91,7 +93,7 @@ h1 {
 .delete-btn {
     padding: 5px 5px;
     border: none;
-    border-radius: 40px;
+    border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s;
     background-color: transparent;
@@ -112,20 +114,21 @@ h1 {
 
 </head>
 <body>
+
 <!-- Links (sit on top) -->
-    <div class="w3-top">
+<div class="w3-top">
         <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="page_accueil_commercial.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="page_accueil_controleur.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="page_historique_commande_commercial.php" class="w3-button w3-block">Historique commandes</a>
+      <a href="page_historique_commande_controleur.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="page_catalogue_fournisseurs_commercial.php" class="w3-button w3-block">Catalogue fournisseurs </a>
+      <a href="page_catalogue_fournisseur_controleur.php" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
-      <a href="page_nouvelle_commande_commercial.php" class="w3-button w3-block">Nouvelle commande</a>
+      <a href="page_conformité_controleur.php" class="w3-button w3-block">Conformité_commande</a>
     </div>
   </div>
 </div>
@@ -136,8 +139,7 @@ h1 {
             <a href="loginController.php" class="w3-button w3-block w3-right">Déconnexion</a>
 </div>
   <div class="w3-panel">
-    <h1><b>Bienvenue Commercial </b></h1>
-    <h1><b>Commandes en cours</b></h1>
+    <h1><b>historique commandes</b></h1>
     
 </div>
 
@@ -145,12 +147,11 @@ h1 {
   <!-- Slideshowe -->
 <?php
 // Connexion à la base de données
-
 require __DIR__. "/model/php/env_settings.php";  
-
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
+
 
 // Vérifier la connexion
 if (!$conn) {
@@ -165,8 +166,10 @@ if(isset($_POST['delete_command'])) {
 
 // Requête SQL pour récupérer les fournisseurs
 $sql = "SELECT commande.*, user.name AS user_name, fournisseur.name AS fournisseur_name 
-FROM commande INNER JOIN user ON commande.id_user = user.id INNER JOIN fournisseur ON commande.id_fournisseur = fournisseur.id";
-$result = mysqli_query($conn, $sql);
+        FROM commande 
+        INNER JOIN user ON commande.id_user = user.id 
+        INNER JOIN fournisseur ON commande.id_fournisseur = fournisseur.id
+        WHERE commande.Etat_livraison = 'livree'";
 $result = mysqli_query($conn, $sql);
 
 // Affichage du tableau HTML
@@ -194,10 +197,10 @@ if (mysqli_num_rows($result) > 0) {
         echo '<td>
                 <form method="post" action="supprimer_commande.php">
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
-                    
+                    <input type="submit" name="delete_command" value="Supprimer commande">
                 </form>
                 
-                <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
+                <a href="fiche_technique_controleur.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
               </td>';
         echo "</tr>";
     }
@@ -211,7 +214,7 @@ echo "</table></div></div>";
 mysqli_close($conn);
 ?>
 
-
+<!-- Fenêtre modale -->
 
   
   
@@ -221,3 +224,10 @@ mysqli_close($conn);
 
 </body>
 </html>
+
+
+
+
+
+
+

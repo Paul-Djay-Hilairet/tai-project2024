@@ -1,3 +1,4 @@
+Ajouter_évalution_conformité
 <?php
 // Connexion à la base de données
 require __DIR__. "/model/php/env_settings.php";  
@@ -5,12 +6,6 @@ require __DIR__. "/model/php/env_settings.php";
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
-
-
-// Vérifier la connexion
- if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-          }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id_fournisseur = $_POST['id_fournisseur'];
@@ -61,9 +56,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs</a>
     </div>
     <div class="w3-col s3">
-      <a href="nouvelle_commande.php" class="w3-button w3-block">Nouvelle commande</a>
-    </div>
-    <div class="w3-col s3">
       <a href="conformité_commande.php" class="w3-button w3-block">Conformité commande</a>
     </div>
   </div>
@@ -71,9 +63,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 <!-- Formulaire de commande -->
 <div class="w3-center" style="margin-top:80px">
-  <h2>Nouvelle Commande</h2>
+  <h2>Nouvelle Évaluation Conformité</h2>
   <form action="nouvelle_commande.php" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-    <h2 class="w3-center">Formulaire de Commande</h2>
+    <h2 class="w3-center">Formulaire de Conformité</h2>
 
     <div class="w3-row w3-section">
       <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>

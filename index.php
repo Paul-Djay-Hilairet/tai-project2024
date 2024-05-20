@@ -18,7 +18,7 @@
         .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
         
         .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -128,12 +128,15 @@ h1 {
     <div class="w3-col s3">
       <a href="nouvelle_commande.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
+    
   </div>
 </div>
 
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
-
+<div class="w3-col s2">
+            <a href="loginController.php" class="w3-button w3-block w3-right">Déconnexion</a>
+</div>
   <div class="w3-panel">
     <h1><b>Commandes en cours</b></h1>
     

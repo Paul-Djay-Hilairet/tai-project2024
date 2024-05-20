@@ -39,6 +39,8 @@ class UserModel extends DBModel {
             $result["name"] = $entries[0]['name'];
             
             $result["id"] = $entries[0]['id'];
+
+            $result["statut"]= $entries[0]['statut'];
         }
         return $result;
     }

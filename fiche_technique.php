@@ -12,12 +12,15 @@
 <div class="container">
     <h1>Fiche Technique du Produit</h1>
     <div class="product-details">
-    <?php
-// Connexion à la base de données
-require __DIR__ . "/model/php/env_settings.php";
+            <?php
 
-// Connexion
-$conn = mysqli_connect($host, $user, $pwd, $dbname);
+                    $host = "localhost";
+                    $dbname = "tai_app_2023_2024_ant";
+                    $user = "tai_app_2023_2024_ant";
+                    $pwd = "Y5I07L0SE2";
+
+                // Connexion
+                    $conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 
             // Vérifier la connexion
@@ -53,15 +56,15 @@ $conn = mysqli_connect($host, $user, $pwd, $dbname);
         // Parcourez les données et affichez-les
                     while($row = $result->fetch_assoc()) {
             // Affichez les données du produit
-                        echo "<p><strong>Nom produit:<strong> " . $row['name'] . "</p>";
-                        echo "<p><strong>Prix:<strong> " . $row['prix'] . "</p>";
-                        echo "<p><strong>Fournisseur: <strong>" . $row['fournisseur'] . "</p>";
-                        echo "<p><strong>Longueur de lame: <strong>" . $row['Longueur_lame'] . " cm</p>";
-                        echo "<p><strong>Matiere lame: <strong>" . $row['Materiau_lame'] . " </p>";
-                        echo "<p><strong>Type de lame:<strong> " . $row['Type_lame'] . " </p>";
-                        echo "<p><strong>Manche de lame: <strong>" . $row['Manche'] . " </p>";
-                        echo "<p><strong>Poids de lame: <strong>" . $row['Poids'] . " grammes</p>";
-                        echo "<p><strong>Origine de lame: <strong>" . $row['Origine'] . "</p>";
+                        echo "<p>Nom produit: " . $row['name'] . "</p>";
+                        echo "<p>Prix: " . $row['prix'] . "</p>";
+                        echo "<p>Fournisseur: " . $row['fournisseur'] . "</p>";
+                        echo "<p>Longueur de lame: " . $row['Longueur_lame'] . " cm</p>";
+                        echo "<p>Matiere lame: " . $row['Materiau_lame'] . " </p>";
+                        echo "<p>Type de lame: " . $row['Type_lame'] . " </p>";
+                        echo "<p>Manche de lame: " . $row['Manche'] . " </p>";
+                        echo "<p>Poids de lame: " . $row['Poids'] . " grammes</p>";
+                        echo "<p>Origine de lame: " . $row['Origine'] . "</p>";
 
             // Continuez avec d'autres champs de la table "product"
                     }
@@ -79,6 +82,8 @@ $conn = mysqli_connect($host, $user, $pwd, $dbname);
     </div>
     <div class="modal-footer">
     <a class="button" href="index.php">Retour à l'accueil</a>
-</div>
+    </div>
+    </div>
+
 </body>
 </html>

@@ -18,8 +18,8 @@
         .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
         
         .container {
-    max-width: 1100px;
-    margin: 10px auto;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -64,10 +64,9 @@ h1 {
 .delete-btn, .details-btn {
     padding: 5px 5px;
     border: none;
-    border-radius: 10px;
+    border-radius: 40px;
     cursor: pointer;
     transition: background-color 0.3s;
-    
 }
 
 .delete-btn {
@@ -92,7 +91,7 @@ h1 {
 .delete-btn {
     padding: 5px 5px;
     border: none;
-    border-radius: 0px;
+    border-radius: 40px;
     cursor: pointer;
     transition: background-color 0.3s;
     background-color: transparent;
@@ -113,12 +112,12 @@ h1 {
 
 </head>
 <body>
-
+<nav> Welcome Controleur </nav>
 <!-- Links (sit on top) -->
     <div class="w3-top">
         <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="index.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="acceuildemo.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
       <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
@@ -136,7 +135,7 @@ h1 {
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
 
   <div class="w3-panel">
-    <h1><b>historique commandes</b></h1>
+    <h1><b>Commandes en cours</b></h1>
     
 </div>
 
@@ -144,11 +143,12 @@ h1 {
   <!-- Slideshowe -->
 <?php
 // Connexion à la base de données
+
 require __DIR__. "/model/php/env_settings.php";  
+
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
-
 
 // Vérifier la connexion
 if (!$conn) {
@@ -163,10 +163,8 @@ if(isset($_POST['delete_command'])) {
 
 // Requête SQL pour récupérer les fournisseurs
 $sql = "SELECT commande.*, user.name AS user_name, fournisseur.name AS fournisseur_name 
-        FROM commande 
-        INNER JOIN user ON commande.id_user = user.id 
-        INNER JOIN fournisseur ON commande.id_fournisseur = fournisseur.id
-        WHERE commande.Etat_livraison = 'livree'";
+FROM commande INNER JOIN user ON commande.id_user = user.id INNER JOIN fournisseur ON commande.id_fournisseur = fournisseur.id";
+$result = mysqli_query($conn, $sql);
 $result = mysqli_query($conn, $sql);
 
 // Affichage du tableau HTML
@@ -194,7 +192,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<td>
                 <form method="post" action="supprimer_commande.php">
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
-                    <input type="submit" name="delete_command" value="Supprimer commande">
+                    
                 </form>
                 
                 <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
@@ -211,7 +209,7 @@ echo "</table></div></div>";
 mysqli_close($conn);
 ?>
 
-<!-- Fenêtre modale -->
+
 
   
   
@@ -221,10 +219,3 @@ mysqli_close($conn);
 
 </body>
 </html>
-
-
-
-
-
-
-

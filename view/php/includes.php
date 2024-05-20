@@ -53,7 +53,11 @@
     </style>
 </head>
 <body>
-
+    <nav>           // Login Admin : admin.Gesticom password:123
+                    // Login Controleur : ctlr.Gesticom password:revelation
+                    // Login Commercial : commerce.Gesticom password:EatMyShorts
+                    // Login Commercial 2 : commercial2.Gesticom password:456
+    </nav>
 <?php
 function include_header() {
     ?>

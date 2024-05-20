@@ -1,4 +1,3 @@
-
 <?php
 // Connexion à la base de données
 require __DIR__. "/model/php/env_settings.php";  
@@ -47,16 +46,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="page_accueil_controleur.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="page_accueil_commercial.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="page_historique_commande_controleur.php" class="w3-button w3-block">Historique commandes</a>
+      <a href="page_historique_commande_commercial.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="page_catalogue_fournisseur_controleur.php" class="w3-button w3-block">Catalogue fournisseurs</a>
+      <a href="page_catalogue_fournisseur_commercial.php" class="w3-button w3-block">Catalogue fournisseurs</a>
     </div>
     <div class="w3-col s3">
-      <a href="page_conformité_controleur.php" class="w3-button w3-block">Conformité commande</a>
+      <a href="page_nouvelle_commande_commercial.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
   </div>
 </div>
@@ -64,11 +63,11 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 <!-- Formulaire de commande -->
 <div class="w3-center" style="margin-top:80px">
 <div class="w3-col s2">
-        <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
-    </div>
-  <h2 class="w3-panel">  Nouvelle Évaluation Conformité </h2>
-  <form action="page_conformite_controleur.php" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-    <h2 class="w3-center">Formulaire de Conformité</h2>
+            <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
+</div>
+  <h2 class="w3-col" s2>Nouvelle Commande</h2>
+  <form action="page_nouvelle_commande_commercial.php" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+    <h2 class="w3-center">Formulaire de Commande</h2>
 
     <div class="w3-row w3-section">
       <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>

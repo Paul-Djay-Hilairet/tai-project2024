@@ -1,4 +1,5 @@
 
+
 <?php
 // Connexion à la base de données
 require __DIR__. "/model/php/env_settings.php";  
@@ -6,7 +7,6 @@ require __DIR__. "/model/php/env_settings.php";
 
 // Connexion
 $conn = mysqli_connect($host, $user, $pwd, $dbname);
-
 
 // Vérifier la connexion
 if (!$conn) {
@@ -18,21 +18,21 @@ if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
     
     // Requête SQL pour supprimer le fournisseur
-    $sql = "DELETE FROM conformite WHERE id=$id";
+    $sql = "DELETE FROM commande WHERE id=$id";
     
     if (mysqli_query($conn, $sql)) {
-        echo "Évaluation supprimée avec succès.";
+        echo "Commande e avec succès.";
     } else {
         echo "Erreur: " . mysqli_error($conn);
     }
 } else {
-    echo "ID de l'évalution non spécifiée.";
+    echo "ID de la commande non spécifié.";
 }
 
 // Fermer la connexion à la base de données
 mysqli_close($conn);
 
 // Rediriger vers la page principale après la suppression
-header("Location: page_conformité_controleur.php");
+header("Location: page_accueil_commercial.php");
 exit();
 ?>

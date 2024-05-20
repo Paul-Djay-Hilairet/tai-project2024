@@ -112,32 +112,35 @@ h1 {
 
 </head>
 <body>
-<nav> Welcome Controleur </nav>
 <!-- Links (sit on top) -->
     <div class="w3-top">
         <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
-      <a href="acceuildemo.php" class="w3-button w3-block">Commandes en cours</a>
+      <a href="page_accueil_controleur.php" class="w3-button w3-block">Commandes en cours</a>
     </div>
     <div class="w3-col s3">
-      <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
+      <a href="page_historique_commande_controleur.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs </a>
+      <a href="page_catalogue_fournisseur_controleur.php" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
-      <a href="nouvelle_commande.php" class="w3-button w3-block">Nouvelle commande</a>
+      <a href="page_conformité_controleur.php" class="w3-button w3-block">Conformité commande</a>
     </div>
   </div>
 </div>
 
 <!-- Content -->
 <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
-
+<div class="w3-col s2">
+            <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
+</div>
   <div class="w3-panel">
+    <h1><b>Bienvenue Controleur</b></h1>
     <h1><b>Commandes en cours</b></h1>
     
-</div>
+    
+    </div>
 
 
   <!-- Slideshowe -->
@@ -195,7 +198,7 @@ if (mysqli_num_rows($result) > 0) {
                     
                 </form>
                 
-                <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
+                <a href="fiche_technique_controleur.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
               </td>';
         echo "</tr>";
     }

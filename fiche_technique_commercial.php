@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,18 +10,16 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>Fiche Technique du Produit</h1>
-    <div class="product-details">
+    <div class="container">
+        <h1>Fiche Technique du Produit</h1>
+        <div class="product-details">
             <?php
 
-                    $host = "localhost";
-                    $dbname = "tai_app_2023_2024_ant";
-                    $user = "tai_app_2023_2024_ant";
-                    $pwd = "Y5I07L0SE2";
+                require __DIR__. "/model/php/env_settings.php";  
 
-                // Connexion
-                    $conn = mysqli_connect($host, $user, $pwd, $dbname);
+
+// Connexion
+                $conn = mysqli_connect($host, $user, $pwd, $dbname);
 
 
             // Vérifier la connexion
@@ -81,7 +80,7 @@
             ?>
     </div>
     <div class="modal-footer">
-    <a class="button" href="index.php">Retour à l'accueil</a>
+    <a class="button" href="page_accueil_commercial.php">Retour à l'accueil</a>
     </div>
     </div>
 

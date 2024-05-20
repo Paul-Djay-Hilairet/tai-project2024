@@ -51,24 +51,24 @@
 <div class="w3-top">
     <div class="w3-row w3-large w3-light-grey">
         <div class="w3-col s3">
-            <a href="index.php" class="w3-button w3-block">Commande en cours</a>
+            <a href="page_accueil_controleur.php" class="w3-button w3-block">Commande en cours</a>
         </div>
         <div class="w3-col s3">
-            <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
+            <a href="page_historique_commande_controleur.php" class="w3-button w3-block">Historique commandes</a>
         </div>
         <div class="w3-col s3">
-            <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs </a>
+            <a href="page_catalogue_fournisseur_controleur.php" class="w3-button w3-block">Catalogue fournisseurs </a>
         </div>
         <div class="w3-col s3">
-            <a href="nouvelle_commande.php" class="w3-button w3-block">Nouvelle commande</a>
+            <a href="page_conformite_controleur.php" class="w3-button w3-block">Conformité commande</a>
         </div>
     </div>
 </div>
 
 <!-- Contenu principal -->
 <div class="container">
-    <h2>Ajouter un nouveau fournisseur</h2>
-    <form action="ajouter_fournisseur.php" method="post">
+    <h2 class="w3-center">Ajouter un nouveau fournisseur</h2>
+    <form action="ajouter_fournisseur_controleur.php" method="post">
         <label for="name">Nom:</label>
         <input type="text" id="name" name="name" required>
         

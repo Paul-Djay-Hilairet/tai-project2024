@@ -34,7 +34,8 @@ page_conformité_admin
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #364b62;
+            color: #fff;
         }
         /* Style pour les liens */
         a {
@@ -46,20 +47,20 @@ page_conformité_admin
 <body>
 
 <!-- Links (sit on top) -->
-<div class="w3-top">
-    <div class="w3-row w3-large w3-light-grey">
-        <div class="w3-col s3">
-            <a href="index.php" class="w3-button w3-block">Commandes en cours</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="historique_commande.php" class="w3-button w3-block">Historique commandes</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="Catalogue_fournisseurs.php" class="w3-button w3-block">Catalogue fournisseurs</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="conformité_commande.php" class="w3-button w3-block">Conformité commande</a>
-        </div>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+    <div class="w3-col s3">
+      <a href="page_accueil_admin.php" class="w3-button w3-block">Commandes en cours</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="page_historique_commande_admin.php" class="w3-button w3-block">Historique commandes</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="page_catalogue_admin.php" class="w3-button w3-block">Catalogue fournisseurs </a>
+    </div>
+    <div class="w3-col s3">
+      <a href="page_nouvelle_commande_admin.php" class="w3-button w3-block">Nouvelle commande</a>
+    </div>
     </div>
 </div>
 
@@ -106,8 +107,8 @@ page_conformité_admin
             echo "<td>" . $row['eval_manche'] . "</td>";
             echo "<td>" . $row['eval_poids'] . "</td>";
             echo "<td>" . $row['commentaire'] . "</td>";
-            echo "<td><a href='fiche_technique.php?id=" . $row['id'] . "'>Modifier</a></td>";
-            echo "<td><a href='supprimer_évaluation.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer cette évaluation ?\");'>Supprimer</a></td>";
+            echo "<td><a href='fiche_technique_admin.php?id=" . $row['id'] . "'>Modifier</a></td>";
+            echo "<td><a href='supprimer_évaluation_admin.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer cette évaluation ?\");'>Supprimer</a></td>";
             echo "</tr>";
         }
     } else {
@@ -120,7 +121,7 @@ page_conformité_admin
     mysqli_close($conn);
     ?>
     <div class="w3-bar">
-        <a href="ajouter_évaluation_conformité.php" class="w3-bar-item w3-button tablink">Ajouter une évaluation conformité</a>
+        <a href="ajouter_évaluation_admin.php" class="w3-bar-item w3-button tablink">Ajouter une évaluation conformité</a>
     </div>
 </div>
 

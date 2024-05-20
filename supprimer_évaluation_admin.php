@@ -33,6 +33,6 @@ if (isset($_GET['id'])) {
 mysqli_close($conn);
 
 // Rediriger vers la page principale après la suppression
-header("Location: page_conformité_controleur.php");
+header("Location: page_conformité_admin.php");
 exit();
 ?>

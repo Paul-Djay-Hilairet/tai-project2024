@@ -67,7 +67,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
     </div>
   <h2 class="w3-panel">  Nouvelle Évaluation Conformité </h2>
-  <form action="page_conformite_controleur.php" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+  <form action="page_nouvelle_commande_commercial.php" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
     <h2 class="w3-center">Formulaire de Conformité</h2>
 
     <div class="w3-row w3-section">

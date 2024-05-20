@@ -79,7 +79,7 @@
             ?>
     </div>
     <div class="modal-footer">
-    <a class="button" href="index.php">Retour à l'accueil</a>
+    <a class="button" href="page_accueil_admin.php">Retour à l'accueil</a>
     </div>
     </div>
 

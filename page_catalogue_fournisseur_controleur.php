@@ -23,6 +23,7 @@ html,body,h1,h2,h3,h4 {
 }
 /* Style pour le tableau */
 table {
+     #f9f9f9;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -35,7 +36,8 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #f2f2f2;
+    background-color:#364b62;
+    color: #fff;
 }
 /* Style pour les liens */
 a {
@@ -60,7 +62,7 @@ a {
       <a href="page_catalogue_fournisseur_controleur.php" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
-      <a href="page_conformité_controleur.php" class="w3-button w3-block">Conformité_commande</a>
+      <a href="page_conformité_controleur.php" class="w3-button w3-block">Conformité commande</a>
     </div>
   </div>
 </div>
@@ -111,7 +113,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['name'] . "</td>";
         echo "<td>" . $row['contact'] . "</td>";
         echo "<td>" . $row['Adresse'] . "</td>";
-        echo "<td><a href='fiche_technique.php?id=" . $row['id'] . "'>Modifier</a></td>";
+        echo "<td><a href='fiche_technique_controleur.php?id=" . $row['id'] . "'>Modifier</a></td>";
         echo "<td><a href='supprimer_fournisseur.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce fournisseur ?\");'>Supprimer</a></td>";
         echo "</tr>";
     }

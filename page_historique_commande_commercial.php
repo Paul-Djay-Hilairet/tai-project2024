@@ -140,7 +140,7 @@ h1 {
             <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
 </div>
   <div class="w3-panel">
-    <h1><b>historique commandes</b></h1>
+    <h1><b>Historique commandes</b></h1>
     
 </div>
 

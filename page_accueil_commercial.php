@@ -18,7 +18,7 @@
         .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
         
         .container {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -122,7 +122,7 @@ h1 {
       <a href="page_historique_commande_commercial.php" class="w3-button w3-block">Historique commandes</a>
     </div>
     <div class="w3-col s3">
-      <a href="page_catalogue_fournisseurs_commercial.php" class="w3-button w3-block">Catalogue fournisseurs </a>
+      <a href="page_catalogue_fournisseur_commercial.php" class="w3-button w3-block">Catalogue fournisseurs </a>
     </div>
     <div class="w3-col s3">
       <a href="page_nouvelle_commande_commercial.php" class="w3-button w3-block">Nouvelle commande</a>
@@ -196,12 +196,12 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['Date_commande'] . "</td>";
         echo "<td>" . $row['Etat_livraison'] . "</td>";
         echo '<td>
-                <form method="post" action="supprimer_commande.php">
+                <form method="post" action="supprimer_commande_commercial.php">
                     <input type="hidden" name="command_id" value="' . $row['id'] . '">
                     
                 </form>
                 
-                <a href="fiche_technique.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
+                <a href="fiche_technique_commercial.php?id_product=' . $row['id_product'] . '" class="details-btn">Fiche technique</a>
               </td>';
         echo "</tr>";
     }

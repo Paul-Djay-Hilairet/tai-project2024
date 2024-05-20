@@ -33,7 +33,8 @@
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #364b62;
+            color: #fff;
         }
         /* Style pour les liens */
         a {

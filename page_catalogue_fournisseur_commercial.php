@@ -37,7 +37,8 @@ th, td {
     text-align: left;
 }
 th {
-    background-color: #f2f2f2;
+    background-color:#364b62;
+    color: #fff;
 }
 /* Style pour les liens */
 a {
@@ -72,6 +73,10 @@ a {
 <div class="w3-col s2">
             <a href="index.php" class="w3-button w3-block w3-right">Déconnexion</a>
 </div>
+
+    
+    
+
 
 <?php
 // Connexion à la base de données
@@ -114,7 +119,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['contact'] . "</td>";
         echo "<td>" . $row['Adresse'] . "</td>";
         echo "<td><a href='fiche_technique_commercial.php?id=" . $row['id'] . "'>Modifier</a></td>";
-        echo "<td><a href='supprimer_fournisseur.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce fournisseur ?\");'>Supprimer</a></td>";
+        echo "<td><a href='supprimer_fournisseur_commercial.php?id=" . $row['id'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce fournisseur ?\");'>Supprimer</a></td>";
         echo "</tr>";
     }
 } else {

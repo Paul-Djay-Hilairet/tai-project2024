@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiche Technique du Produit</title>
-    <link rel="stylesheet" href="css_fiche_technique.css"> <!-- Assurez-vous de créer et lier ce fichier CSS -->
+    <link rel="stylesheet" href="css_fiche_technique.css"> 
 </head>
 <body>
 
@@ -81,7 +81,7 @@
             ?>
     </div>
     <div class="modal-footer">
-    <a class="button" href="page_accueil_admin.php">Retour à l'accueil</a>
+    <a class="button" href="index.php">Retour à l'accueil</a>
     </div>
     </div>
 

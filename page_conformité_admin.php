@@ -120,9 +120,7 @@ page_conformité_admin
     // Fermer la connexion à la base de données
     mysqli_close($conn);
     ?>
-    <div class="w3-bar">
-        <a href="ajouter_évaluation_admin.php" class="w3-bar-item w3-button tablink">Ajouter une évaluation conformité</a>
-    </div>
+    
 </div>
 
 </body>

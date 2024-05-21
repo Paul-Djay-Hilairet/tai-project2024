@@ -31,7 +31,7 @@
             <!-- A form to logout -->
             <!-- It redirects to the form controller -->
             <!-- Note that this could have been done with a simple link and a $_GET parameter -->
-            <form method="post" action="loginController.php">
+            <form method="post" action="index.php">
                 <fieldset>
                     <legend>Logout</legend>
                     <button type="submit">Logout</button>

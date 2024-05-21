@@ -61,11 +61,15 @@
     <div class="w3-col s3">
       <a href="page_nouvelle_commande_admin.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
+    <div class="w3-col s3">
+      <a href="page_conformité_admin.php" class="w3-button w3-block">Conformité commande</a>
+    </div>
     </div>
 </div>
 
 <!-- Contenu principal -->
 <div class="container">
+
     <?php
     // Connexion à la base de données
     require __DIR__. "/model/php/env_settings.php";  

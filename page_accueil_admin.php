@@ -114,7 +114,7 @@ h1 {
 <body>
 
 <!-- Links (sit on top) -->
-    <div class="w3-top">
+<div class="w3-top">
         <div class="w3-row w3-large w3-light-grey">
     <div class="w3-col s3">
       <a href="page_accueil_admin.php" class="w3-button w3-block">Commandes en cours</a>
@@ -128,7 +128,10 @@ h1 {
     <div class="w3-col s3">
       <a href="page_nouvelle_commande_admin.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
-  </div>
+    <div class="w3-col s3">
+      <a href="page_conformité_admin.php" class="w3-button w3-block">Conformité commande</a>
+    </div>
+    </div>
 </div>
 
 <!-- Content -->

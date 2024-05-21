@@ -1,4 +1,3 @@
-supprimer_commande
 
 <?php
 // Connexion à la base de données

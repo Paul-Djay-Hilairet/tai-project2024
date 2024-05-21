@@ -1,6 +1,4 @@
-page_catalogue_fournisseur_commercial
 
-page_catalogue_fournisseur_controleur
 <!DOCTYPE html>
 <html>
 <head>

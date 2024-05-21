@@ -9,8 +9,7 @@
 
     function include_header() {
         ?>
-        <header>
-            
+        <header>    
         </header>
         <?php
     }

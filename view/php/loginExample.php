@@ -23,22 +23,30 @@
         <title>Login Example</title>
     </head>
     <body>
+        <main>
+            <h3>WELCOME TO GESTICOM</h3>
+            <p>Login Admin : admin.Gesticom password:123</p>
+            <p>Login Controleur : ctlr.Gesticom password:revelation</p>
+            <p>Login Commercial : commerce.Gesticom password:EatMyShorts</p>
+            <p>Login Commercial 2 : commercial2.Gesticom password:456</p>
+
+        </main>
         
         <!-- PHP only used to display stuff -->
         <?php include_header(); ?>
 
         <?php 
             // if an error happened
-            if (isset($something_to_say)) {
-                include_error_message($something_to_say);
-            }
+           
         ?>
 
         <form method="post" action="index.php">
+        
             <fieldset>
                 
                 <img src="logo.png" alt="Login Image" style="display:block; margin:auto; width:100px; height:100px;">
                 <input type="text" placeholder="login" id="login" name="login">
+                
                 <input type="password" placeholder='password' id='pwd' name="pwd">
                 <button type="submit">Submit</button>
             </fieldset>
@@ -47,4 +55,6 @@
         <?php include_footer(); ?>
 
     </body>
-</html>
+
+
+    

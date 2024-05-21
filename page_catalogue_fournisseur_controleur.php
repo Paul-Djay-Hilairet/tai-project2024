@@ -23,7 +23,7 @@ html,body,h1,h2,h3,h4 {
 }
 /* Style pour le tableau */
 table {
-     #f9f9f9;
+     
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;

@@ -63,6 +63,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-col s3">
       <a href="page_nouvelle_commande_admin.php" class="w3-button w3-block">Nouvelle commande</a>
     </div>
+    <div class="w3-col s3">
+      <a href="page_conformité_admin.php" class="w3-button w3-block">Conformité commande</a>
+    </div>
   </div>
 </div>
 
